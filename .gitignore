@@ -1,0 +1,7 @@
+Thumbs.db
+.DS_Store
+pathtracer
+3rdparty
+CMake*
+CPack*
+Makefile

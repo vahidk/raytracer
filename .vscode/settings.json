@@ -1,0 +1,15 @@
+{
+    "files.associations": {
+        "iterator": "cpp",
+        "string": "cpp",
+        "string_view": "cpp",
+        "vector": "cpp",
+        "ios": "cpp",
+        "__bit_reference": "cpp",
+        "__split_buffer": "cpp",
+        "initializer_list": "cpp",
+        "typeinfo": "cpp",
+        "atomic": "cpp",
+        "system_error": "cpp"
+    }
+}
