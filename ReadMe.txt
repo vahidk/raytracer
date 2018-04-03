@@ -3,7 +3,7 @@
 ** VRTStudio (A Simple Raytracer)
 **
 ** Created at: April 15th 2005
-** Last Update: Agust 8th 2006
+** Last Update: August 8th 2006
 **
 ******************************************************************************
 
