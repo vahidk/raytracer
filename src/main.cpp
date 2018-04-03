@@ -8,6 +8,7 @@ int main(int argc, char **argv) {
 
   if (argc != 2) {
     printf("Usage: raytracer scripts/basic.lua\n");
+    return 0;
   }
 
   vrt::Script().Run(argv[1]);
