@@ -21,7 +21,7 @@ void ParallelFor(T start, T end, F f, uint32_t num_threads = 0) {
     num_threads = std::thread::hardware_concurrency();
   }
   const T len = end - start;
-  if (num_threads > len) {
+  if ((T)num_threads > len) {
     num_threads = len;
   }
   const T stride = (T)ceil(float(len) / float(num_threads));

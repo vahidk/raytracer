@@ -6,6 +6,8 @@
  * Vahid Kazemi
  *********************************************************/
 
+#include <stdio.h>
+
 #include "texture.h"
 
 namespace vrt {

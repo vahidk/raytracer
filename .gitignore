@@ -5,3 +5,4 @@ pathtracer
 CMake*
 CPack*
 Makefile
+cmake_install.cmake

@@ -18,26 +18,26 @@ public:
   Vector3(float x, float y, float z) : x(x), y(y), z(z) {}
 
   void Set(float x, float y, float z);
-  const Vector3 operator+(const Vector3 &vec) const;
+  Vector3 operator+(const Vector3 &vec) const;
   const Vector3 &operator+=(const Vector3 &vec);
-  const Vector3 operator-(const Vector3 &vec) const;
+  Vector3 operator-(const Vector3 &vec) const;
   const Vector3 &operator-=(const Vector3 &vec);
-  const Vector3 operator/(float s) const;
+  Vector3 operator/(float s) const;
   const Vector3 &operator/=(float s);
-  const Vector3 operator*(float s) const;
-  friend const Vector3 operator*(float s, const Vector3 &vec);
+  Vector3 operator*(float s) const;
+  friend Vector3 operator*(float s, const Vector3 &vec);
   const Vector3 &operator*=(float s);
-  const Vector3 operator-() const;
+  Vector3 operator-() const;
   float Dot(const Vector3 &vec) const;
   float Length() const;
   float SqrLen() const;
-  const Vector3 Normal() const;
+  Vector3 Normal() const;
   float Distance(const Vector3 &vec) const;
-  const Vector3 Reflection(const Vector3 &normal) const;
-  const Vector3 Refraction(const Vector3 &normal, float ratio) const;
-  const Vector3 Cross(const Vector3 &vec) const;
-  const Vector3 Modulate(const Vector3 &color) const;
-  const float GrayScale() const;
+  Vector3 Reflection(const Vector3 &normal) const;
+  Vector3 Refraction(const Vector3 &normal, float ratio) const;
+  Vector3 Cross(const Vector3 &vec) const;
+  Vector3 Modulate(const Vector3 &color) const;
+  float GrayScale() const;
 
   float Teta() const {
     float r = sqrtf(x * x + y * y);
@@ -82,17 +82,17 @@ public:
     this->y = y;
   }
 
-  const Vector2 operator+(const Vector2 &vec) const {
+  Vector2 operator+(const Vector2 &vec) const {
     return Vector2(x + vec.x, y + vec.y);
   }
 
-  const Vector2 operator-(const Vector2 &vec) const {
+  Vector2 operator-(const Vector2 &vec) const {
     return Vector2(x - vec.x, y - vec.y);
   }
 
-  const Vector2 operator*(const float f) const { return Vector2(x * f, y * f); }
+  Vector2 operator*(const float f) const { return Vector2(x * f, y * f); }
 
-  const Vector2 operator/(const float f) const { return Vector2(x / f, y / f); }
+  Vector2 operator/(const float f) const { return Vector2(x / f, y / f); }
 
   union {
     struct {

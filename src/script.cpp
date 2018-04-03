@@ -21,7 +21,7 @@ int init(lua_State *ls) {
   return 0;
 }
 
-int clear(lua_State *ls) {
+int clear(lua_State *) {
   Scene::GetInstance()->Clear();
   return 0;
 }
@@ -197,7 +197,7 @@ int setHDR(lua_State *ls) {
   return 0;
 }
 
-int setHalfToning(lua_State *ls) {
+int setHalfToning(lua_State *) {
   Raytracer::GetInstance()->SetHalfToning();
   return 0;
 }

@@ -31,9 +31,9 @@ public:
 
   void Blur(int level);
 
-  const int GetWidth() const { return width; }
+  int GetWidth() const { return width; }
 
-  const int GetHeight() const { return height; }
+  int GetHeight() const { return height; }
 
 private:
   int width;

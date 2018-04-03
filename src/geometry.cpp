@@ -17,7 +17,7 @@ void Vector3::Set(float x, float y, float z) {
   this->z = z;
 }
 
-const Vector3 Vector3::operator+(const Vector3 &vec) const {
+Vector3 Vector3::operator+(const Vector3 &vec) const {
   return Vector3(x + vec.x, y + vec.y, z + vec.z);
 }
 
@@ -28,7 +28,7 @@ const Vector3 &Vector3::operator+=(const Vector3 &vec) {
   return *this;
 }
 
-const Vector3 Vector3::operator-(const Vector3 &vec) const {
+Vector3 Vector3::operator-(const Vector3 &vec) const {
   return Vector3(x - vec.x, y - vec.y, z - vec.z);
 }
 
@@ -39,7 +39,7 @@ const Vector3 &Vector3::operator-=(const Vector3 &vec) {
   return *this;
 }
 
-const Vector3 Vector3::operator/(float s) const {
+Vector3 Vector3::operator/(float s) const {
   return Vector3(x / s, y / s, z / s);
 }
 
@@ -50,11 +50,11 @@ const Vector3 &Vector3::operator/=(float s) {
   return *this;
 }
 
-const Vector3 Vector3::operator*(float s) const {
+Vector3 Vector3::operator*(float s) const {
   return Vector3(x * s, y * s, z * s);
 }
 
-const Vector3 operator*(float s, const Vector3 &vec) {
+Vector3 operator*(float s, const Vector3 &vec) {
   return Vector3(vec.x * s, vec.y * s, vec.z * s);
 }
 
@@ -65,7 +65,7 @@ const Vector3 &Vector3::operator*=(float s) {
   return *this;
 }
 
-const Vector3 Vector3::operator-() const { return Vector3(-x, -y, -z); }
+Vector3 Vector3::operator-() const { return Vector3(-x, -y, -z); }
 
 float Vector3::Dot(const Vector3 &vec) const {
   return x * vec.x + y * vec.y + z * vec.z;
@@ -75,33 +75,33 @@ float Vector3::Length() const { return sqrtf(x * x + y * y + z * z); }
 
 float Vector3::SqrLen() const { return x * x + y * y + z * z; }
 
-const Vector3 Vector3::Normal() const { return *this / Length(); }
+Vector3 Vector3::Normal() const { return *this / Length(); }
 
 float Vector3::Distance(const Vector3 &vec) const {
   return (*this - vec).Length();
 }
 
-const Vector3 Vector3::Reflection(const Vector3 &N) const {
+Vector3 Vector3::Reflection(const Vector3 &N) const {
   return *this - 2 * (N.Dot(*this)) * N;
 }
 
-const Vector3 Vector3::Refraction(const Vector3 &N, float r) const {
+Vector3 Vector3::Refraction(const Vector3 &N, float r) const {
   Vector3 L = -*this;
   float NL = N.Dot(L);
   float ct = sqrtf(1 - (r * r) * (1 - (NL * NL)));
   return (r * NL - ct) * N - r * L;
 }
 
-const Vector3 Vector3::Cross(const Vector3 &vec) const {
+Vector3 Vector3::Cross(const Vector3 &vec) const {
   return Vector3(y * vec.z - z * vec.y, z * vec.x - x * vec.z,
                  x * vec.y - y * vec.x);
 }
 
-const Vector3 Color::Modulate(const Vector3 &vec) const {
+Vector3 Color::Modulate(const Vector3 &vec) const {
   return Vector3(x * vec.x, y * vec.y, z * vec.z);
 }
 
-const float Color::GrayScale() const { return 0.3f * x + 0.4f * y + 0.3f * z; }
+float Color::GrayScale() const { return 0.3f * x + 0.4f * y + 0.3f * z; }
 
 // PLANE //////////////////////////////////////////////////////////////////
 
